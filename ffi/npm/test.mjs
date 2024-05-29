@@ -1,9 +1,9 @@
 
 import { ICU4XDataProvider, ICU4XLineSegmenter, ICU4XGraphemeClusterSegmenter } from './lib/index.mjs';
 
-const text = "你可以看到\u2139\uFE0F绘制出来的emoji🌟与文本框中的样式一致。它也支持特殊的控制字符，如设置肤色👨\u{1F3FD}或将多个emoji拼合在一起的样式。\u{1F469}\u200D\u{1F469}\u200D\u{1F467}，就像这样。"
+const text = "abc"
 const provider = ICU4XDataProvider.create_compiled();
-const segmenter = ICU4XLineSegmenter.create_auto(provider)
+const segmenter = ICU4XGraphemeClusterSegmenter.create(provider)
 
 const segments = [];
 
