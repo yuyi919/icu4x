@@ -1,6 +1,5 @@
 
-import { ICU4XDataProvider, ICU4XLineSegmenter, ICU4XGraphemeClusterSegmenter } from './lib/index.mjs';
-
+import { ICU4XDataProvider, ICU4XLineSegmenter, ICU4XGraphemeClusterSegmenter } from './lib/index';
 const text = "abc"
 const provider = ICU4XDataProvider.create_compiled();
 const segmenter = ICU4XGraphemeClusterSegmenter.create(provider)
