@@ -8,6 +8,7 @@ import subprocess
 
 SYMBOLS = [
     "ICU4XDataProvider_create_compiled",
+    "ICU4XDataProvider_create_empty",
     "ICU4XDataProvider_destroy",
     # "ICU4XFixedDecimal_create_from_i32",
     # "ICU4XFixedDecimal_destroy",
@@ -15,7 +16,8 @@ SYMBOLS = [
     # "ICU4XFixedDecimalFormatter_create_with_grouping_strategy",
     # "ICU4XFixedDecimalFormatter_destroy",
     # "ICU4XFixedDecimalFormatter_format",
-    "ICU4XLineSegmenter_create_auto",
+    # "ICU4XLineSegmenter_create_auto",
+    "ICU4XLineSegmenter_create_lstm_with_options_v1",
     "ICU4XLineSegmenter_segment_utf8",
     "ICU4XLineBreakIteratorUtf8_next",
     "ICU4XGraphemeClusterSegmenter_create",
@@ -30,7 +32,7 @@ def main():
     is_export = False
     for arg in sys.argv[1:]:
         if is_export:
-            if not arg.startswith("ICU4X") or arg in SYMBOLS:
+            if not arg.startswith("ICU4X") or arg.startswith("ICU4XScript") or arg.startswith("ICU4XProperty") or arg in SYMBOLS:
                 new_argv += ["--export", arg]
             is_export = False
         elif arg == "--export":
